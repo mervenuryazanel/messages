@@ -6,6 +6,13 @@ import { MessagesService } from './messages.service';
 //nest automatically creates the instance of controller for us so we dont have to register controller with DI containers
 @Controller('messages')
 export class MessagesController {
+    //in the constructor example below we are injecting the same instance of the service into all three properties. All properties has the same instance of the service
+    // constructor(
+    //     public messagesService1: MessagesService,
+    //     public messagesService2: MessagesService,
+    //     public messagesService3: MessagesService,
+    // ) {
+    // }
 
     constructor(public messagesService: MessagesService) {
     }
