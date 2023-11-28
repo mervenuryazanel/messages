@@ -13,9 +13,4 @@ content-type: application/json
 
 ### Get a particular message
 
-GET http://localhost:4000/messages/720
-
-
-###
-
-GET http://localhost:4000/messages/112312312312
+GET http://localhost:4000/messages/112

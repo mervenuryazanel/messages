@@ -1,13 +1,13 @@
 import { Controller, Get, Post, Body, Param, NotFoundException } from '@nestjs/common';
 import { CreateMessageDto } from './dtos/create-messages.dto';
 import { MessagesService } from './messages.service';
+
+//we dont need to use the @Injectable decorator because controller only consumes the classes
+//nest automatically creates the instance of controller for us so we dont have to register controller with DI containers
 @Controller('messages')
 export class MessagesController {
-    messagesService: MessagesService;
 
-    constructor() {
-        //DONT DO THIS ON REAL APPS!!! USE DEPENDENCY INJECTION INSTEAD
-        this.messagesService = new MessagesService();
+    constructor(public messagesService: MessagesService) {
     }
 
     @Get()

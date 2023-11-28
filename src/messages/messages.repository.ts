@@ -1,5 +1,7 @@
+import { Injectable } from "@nestjs/common";
 import { readFile, writeFile } from "fs/promises";
 
+@Injectable() //this decorator marks this class for regestering as a provider inside of the DI container
 export class MessagesRepository {
     async findOne(id: string) {
         //first read the file
